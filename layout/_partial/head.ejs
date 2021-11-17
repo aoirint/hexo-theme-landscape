@@ -20,6 +20,12 @@
   %>
   <title><% if (title){ %><%= title %> | <% } %><%= config.title %></title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <% if (config.noindex){ %>
+    <meta name="robots" content="noindex">
+  <% } %>
+  <% if (config.noreferrer){ %>
+    <meta name="referrer" content="no-referrer">
+  <% } %>
   <%- open_graph({twitter_id: theme.twitter, fb_admins: theme.fb_admins, fb_app_id: theme.fb_app_id}) %>
   <% if (config.feed) { %>
     <%- feed_tag() %>
